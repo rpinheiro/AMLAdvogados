@@ -8,11 +8,11 @@ namespace AML.Models.AccountViewModels
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "O e-mail é obrigatório")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A senha é obrigatória")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
