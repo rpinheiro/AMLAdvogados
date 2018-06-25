@@ -1,0 +1,39 @@
+﻿@model AML.Models.Cliente.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Exclusão de cliente</h2>
+
+<h3>Você tem certeza que deseja apagar este cliente?</h3>
+<div>
+    <h4>Dados do Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RG)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RG)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Apagar" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar para a Lista de Clientes</a>
+    </form>
+</div>

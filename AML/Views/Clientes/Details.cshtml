@@ -1,0 +1,49 @@
+﻿@model AML.Models.Cliente.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Dados do Cliente</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RG)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RG)
+        </dd>
+        <dt>
+            Telefone
+        </dt>
+        <dd>
+            @Html.Raw(string.Join(", ", Model.Telefone.Select(c => c.Numero.Trim()).ToArray()))
+            
+        </dd>
+        <dt>
+            Email
+        </dt>
+        <dd>                        
+               @Html.Raw(string.Join(", ", Model.Email.Select(c => c.EnderecoEmail.Trim()).ToArray()))
+            
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a Lista de Clientes</a>
+</div>

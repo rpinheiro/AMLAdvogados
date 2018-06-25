@@ -1,0 +1,132 @@
+﻿@model AML.Models.Cliente.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edição de cliente</h2>
+<script src="~/js/Cliente/CadastroCliente.js"></script>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label"></label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RG" class="control-label"></label>
+                <input asp-for="RG" class="form-control" />
+                <span asp-validation-for="RG" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group" style="width:500px" style="margin-top:15px">
+                <label class="control-label">Telefone</label>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="txtTelefone" style="width:200px">
+                    </div>
+                    <div class="col-sm-2">
+                        <input id="btnAdicionarTelefone" type="button" class="btn-primary" value="Adicionar" />
+                    </div>
+                    <div class="col-sm-0" style="margin-left:15px;">
+                        <table class="table" id="tblTelefone" style="display:none;width:500px">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Número
+                                    </th>
+                                    <th>
+                                        Tipo
+                                    </th>
+                                    <th>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int contador = 0;
+                                    foreach (var telefone in Model.Telefone)
+                                    {
+                                        <tr>
+                                            <input class='identificadorTelefone' type='hidden' value='@telefone.Id' name='Telefone[@contador].Id' />
+                                            <input class='identificadorTelefoneCliente' type='hidden' value='@Model.Id' name='Telefone[@contador].Cliente.Id' />
+                                            <td class='telefone'> @telefone.Numero <input class='numero' type='hidden' value='@telefone.Numero' name='Telefone[@contador].Numero' /></td>
+                                            <td class='tipoTelefone'>
+                                                @telefone.Tipo<input class='tipoTelefone' type='hidden' value='@telefone.Tipo' name='Telefone[@contador].Tipo' />
+                                            </td>
+                                            <td class='acoes'><a onclick='AlterarTelefone(this)' href='#'>Editar</a> | <a onclick='ApagarTelefone(this)' href='#'>Apagar</a> </td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="width:500px; margin-top:15px;">
+
+                <label class="control-label">E-mail</label>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <input class="form-control" type="text" id="txtEmail" style="width:200px">
+                    </div>
+                    <div class="col-sm-5">
+                        <input id="btnAdicionarEmail" type="button" class="btn-primary" value="Adicionar" />
+                    </div>
+                </div>
+
+                <table class="table" id="tblEmail" style="display:none;width:500px">
+                    <thead>
+                        <tr>
+                            <th>
+                                E-mail
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int contadorEmail = 0;
+                            foreach (var email in Model.Email)
+                            {
+                                <tr>
+                                    <input class='identificadorEmail' type='hidden' value='@email.Id' name='Email[@contador].Id' />
+                                    <input class='identificadorEmailCliente' type='hidden' value='@Model.Id' name='Email[@contador].Cliente.Id' />
+                                    <td class='email'>@email.EnderecoEmail<input class='email' type='hidden' name='Email[@contadorEmail].EnderecoEmail' value='@email.EnderecoEmail' /></td>
+                                    <td class='acoes'><a onclick='AlterarEmail(this)' href='#'>Editar</a> | <a onclick='ApagarEmail(this)' href='#'>Apagar</a> </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a Lista de Clientes</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

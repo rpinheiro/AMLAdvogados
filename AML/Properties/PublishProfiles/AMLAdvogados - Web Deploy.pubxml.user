@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAspD7+e4Eyk+ospGqs9vIhAAAAAACAAAAAAAQZgAAAAEAACAAAAAC+KS1WWCqHp+gT2nQ9fRdRtz2e1pDXZm6yCjeh++2kAAAAAAOgAAAAAIAACAAAACVzqp10iEDZWSXx6koMcKYv1/ueWN/Hw7gAeLe4rsn3oAAAAC0yUpXgFHWoPcfCXSxeB36yvky6iZxGV9ehX6VAHCVBLoNNb0QE66rtr4k1CQ1pwLspx717yiXUrnYmo23refnuMlKVEPSkRhzkGCwQji9TliFhe8uF/Ztgm/mSfkoowfgYsh6LRtJmuQccszAv0u7ni38wU1scYQB7EzJxNt4HkAAAACGMDSW+tOppZ9xoH7JAxwoTYZLrXVX5TTvnnvWf/zwXuJksUblGomXzPwDQIW6zHMuJPcEW6rg7Qv5Mpd6tThN</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ClienteContext">
+      <Value>Data Source=tcp:amladvocaciadbserver.database.windows.net,1433;Initial Catalog=AMLAdvocacia2018_db;User Id=amladmin@amladvocaciadbserver;Password=aAdmin@123</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:amladvocaciadbserver.database.windows.net,1433;Initial Catalog=AMLAdvocacia2018_db;User Id=amladmin@amladvocaciadbserver;Password=aAdmin@123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
