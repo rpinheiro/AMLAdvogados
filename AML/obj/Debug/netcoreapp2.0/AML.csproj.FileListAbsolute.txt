@@ -1,0 +1,12 @@
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\bin\Debug\netcoreapp2.0\AML.deps.json
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\bin\Debug\netcoreapp2.0\AML.runtimeconfig.json
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\bin\Debug\netcoreapp2.0\AML.runtimeconfig.dev.json
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\bin\Debug\netcoreapp2.0\AML.dll
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\bin\Debug\netcoreapp2.0\AML.pdb
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\AML.csproj.CoreCompileInputs.cache
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\AML.AssemblyInfoInputs.cache
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\AML.AssemblyInfo.cs
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\AML.dll
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\AML.pdb
+C:\Users\Rafael\Source\Repos\AMLAdvogados\AML\obj\Debug\netcoreapp2.0\AML.csprojAssemblyReference.cache

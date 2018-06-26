@@ -1,7 +1,7 @@
 ﻿@model AML.Models.Cliente.Cliente
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Cliente";
 }
 
 <h2>Dados do Cliente</h2>
@@ -28,18 +28,48 @@
             @Html.DisplayFor(model => model.RG)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CEP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CEP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt>
             Telefone
         </dt>
         <dd>
             @Html.Raw(string.Join(", ", Model.Telefone.Select(c => c.Numero.Trim()).ToArray()))
-            
+
         </dd>
         <dt>
             Email
         </dt>
-        <dd>                        
-               @Html.Raw(string.Join(", ", Model.Email.Select(c => c.EnderecoEmail.Trim()).ToArray()))
-            
+        <dd>
+            @Html.Raw(string.Join(", ", Model.Email.Select(c => c.EnderecoEmail.Trim()).ToArray()))
+
         </dd>
     </dl>
 </div>
