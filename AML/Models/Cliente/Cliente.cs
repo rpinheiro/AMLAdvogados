@@ -15,24 +15,7 @@ namespace AML.Models.Cliente
         [Required(ErrorMessage = "O nome é obrigatório")]
         public string Nome { get; set; }
 
-        [StringLength(100, ErrorMessage ="O endereço deve conter no máximo 100 caracteres")]
-        public string Endereco { get; set; }
-
-        [StringLength(100, ErrorMessage = "O endereço deve conter no máximo 100 caracteres")]
-        public string Complemento { get; set; }
-
-        [StringLength(50, ErrorMessage = "O endereço deve conter no máximo 100 caracteres")]
-        public string Bairro { get; set; }
-
-        [StringLength(15, ErrorMessage = "O endereço deve conter no máximo 100 caracteres")]
-        public string CEP { get; set; }
-
-        [StringLength(50, ErrorMessage = "O endereço deve conter no máximo 100 caracteres")]
-        public string Cidade { get; set; }
-
-        [Required(ErrorMessage = "O CPF é obrigatório")]        
-        [RegularExpression(@"[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}", ErrorMessage =
-            "O CPF informado é inválido")]
+        [Required(ErrorMessage = "O CPF é obrigatório")]
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "O RG é obrigatório")]

@@ -6,11 +6,8 @@
             idCliente = 0;
         var txtEmail = $("#txtEmail").val();
         var tamanhoTabela = $("#tblEmail").find('tbody').find("tr").length;
-        var inputIdentificadorEmailClienteId = "<input class='identificadorEmailCliente' type='hidden' value='" + idCliente + "' name='Email[" + tamanhoTabela + "].Cliente.Id' />";
-        var inputIdentificadorEmailClienteCPF = "<input class='identificadorEmailClienteCPF' type='hidden' value='' name='Email[" + tamanhoTabela + "].Cliente.CPF' />";
-        var inputIdentificadorEmailClienteRG = "<input class='identificadorEmailClienteRG' type='hidden' value='' name='Email[" + tamanhoTabela + "].Cliente.RG' />";
-        var inputIdentificadorEmailClienteNome = "<input class='identificadorEmailClienteNome' type='hidden' value='' name='Email[" + tamanhoTabela + "].Cliente.Nome' />";
-        $("#tblEmail").find('tbody').append("<tr>" + inputIdentificadorEmailClienteId + inputIdentificadorEmailClienteCPF + inputIdentificadorEmailClienteRG + inputIdentificadorEmailClienteNome + "<input class='identificadorEmail' type='hidden' value='0' name='Email[" + tamanhoTabela + "].Id' />" + "<td class='email' >" + txtEmail + "<input class='email' type='hidden' name='Email[" + tamanhoTabela + "].EnderecoEmail' value='" + txtEmail + "'/></td > <td class='acoes'><a onclick='AlterarEmail(this)' href='#' >Editar</a> | <a onclick='ApagarEmail(this)' href='#'>Apagar</a> </td></tr > ");
+        var inputIdentificadorEmailCliente = "<input class='identificadorEmailCliente' type='hidden' value='" + idCliente + "' name='Email[" + tamanhoTabela + "].Cliente.Id' />";
+        $("#tblEmail").find('tbody').append("<tr>" + inputIdentificadorEmailCliente + "<input class='identificadorEmail' type='hidden' value='0' name='Email[" + tamanhoTabela + "].Id' />" + "<td class='email' >" + txtEmail + "<input class='email' type='hidden' name='Email[" + tamanhoTabela + "].EnderecoEmail' value='" + txtEmail + "'/></td > <td class='acoes'><a onclick='AlterarEmail(this)' href='#' >Editar</a> | <a onclick='ApagarEmail(this)' href='#'>Apagar</a> </td></tr > ");
         $("#tblEmail").show();
         $("#txtEmail").val('');
     });
@@ -21,13 +18,10 @@
             idCliente = 0;
         var txtTelefone = $("#txtTelefone").val();
         var tamanhoTabela = $("#tblTelefone").find('tbody').find("tr").length;
-        var inputIdentificadorTelefoneClienteId = "<input class='identificadorTelefoneCliente' type='hidden' value='" + idCliente + "' name='Telefone[" + tamanhoTabela + "].Cliente.Id' />";
-        var inputIdentificadorTelefoneClienteCPF = "<input class='identificadorTelefoneClienteCPF' type='hidden' value='' name='Telefone[" + tamanhoTabela + "].Cliente.CPF' />";
-        var inputIdentificadorTelefoneClienteRG = "<input class='identificadorTelefoneClienteRG' type='hidden' value='' name='Telefone[" + tamanhoTabela + "].Cliente.RG' />";
-        var inputIdentificadorTelefoneClienteNome = "<input class='identificadorTelefoneClienteRG' type='hidden' value='' name='Telefone[" + tamanhoTabela + "].Cliente.Nome' />";
+        var inputIdentificadorTelefoneCliente = "<input class='identificadorTelefoneCliente' type='hidden' value='" + idCliente + "' name='Telefone[" + tamanhoTabela + "].Cliente.Id' />";
         var inputIdentificadortelefone = "<input class='identificadorTelefone' type='hidden' value='0' name='Telefone[" + tamanhoTabela + "].Id' />";
 
-        $("#tblTelefone").find('tbody').append("<tr>" + inputIdentificadorTelefoneClienteId + inputIdentificadorTelefoneClienteCPF + inputIdentificadorTelefoneClienteRG + inputIdentificadorTelefoneClienteNome + inputIdentificadortelefone + "<td class='telefone'> " + txtTelefone + "<input class='numero' type='hidden' value='" + txtTelefone + "' name='Telefone[" + tamanhoTabela + "].Numero'/></td > <td class='tipoTelefone' >" + "Celular<input class='tipoTelefone' type='hidden' value='Celular' name='Telefone[" + tamanhoTabela + "].Tipo'/> " + "</td> <td class='acoes'><a onclick='AlterarTelefone(this)' href='#' >Editar</a> | <a onclick='ApagarTelefone(this)' href='#'>Apagar</a> </td></tr > ");
+        $("#tblTelefone").find('tbody').append("<tr>" + inputIdentificadorTelefoneCliente + inputIdentificadortelefone + "<td class='telefone'> " + txtTelefone + "<input class='numero' type='hidden' value='" + txtTelefone + "' name='Telefone[" + tamanhoTabela + "].Numero'/></td > <td class='tipoTelefone' >" + "Celular<input class='tipoTelefone' type='hidden' value='Celular' name='Telefone[" + tamanhoTabela + "].Tipo'/> " + "</td> <td class='acoes'><a onclick='AlterarTelefone(this)' href='#' >Editar</a> | <a onclick='ApagarTelefone(this)' href='#'>Apagar</a> </td></tr > ");
         $("#tblTelefone").show();
         $("#txtTelefone").val('');
     });
@@ -203,9 +197,6 @@ function IndexarTabelaTelefone() {
             var linha = $(this).closest("tr");
             $(linha).find("input[class='identificadorTelefone']").attr("name", "Telefone[" + int + "].Id");
             $(linha).find("input[class='identificadorTelefoneCliente']").attr("name", "Telefone[" + int + "].Cliente.Id");
-            $(linha).find("input[class='identificadorTelefoneClienteCPF']").attr("name", "Telefone[" + int + "].Cliente.CPF");
-            $(linha).find("input[class='identificadorTelefoneClienteRG']").attr("name", "Telefone[" + int + "].Cliente.RG");
-            $(linha).find("input[class='identificadorTelefoneClienteNome']").attr("name", "Telefone[" + int + "].Cliente.Nome");
         });
         int++;
     });
@@ -228,9 +219,6 @@ function IndexarTabelaEmail() {
             var linha = $(this).closest("tr");
             $(linha).find("input[class='identificadorEmail']").attr("name", "Email[" + int + "].Id");
             $(linha).find("input[class='identificadorEmailCliente']").attr("name", "Email[" + int + "].Cliente.Id");
-            $(linha).find("input[class='identificadorEmailClienteCPF']").attr("name", "Email[" + int + "].Cliente.CPF");
-            $(linha).find("input[class='identificadorEmailClienteRG']").attr("name", "Email[" + int + "].Cliente.RG");
-            $(linha).find("input[class='identificadorEmailClienteNome']").attr("name", "Email[" + int + "].Cliente.Nome");
         });
         int++;
     });

@@ -57,17 +57,8 @@ namespace AML.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,CPF,RG, Endereco, Complemento, Bairro, CEP, Cidade, Email, Telefone")] Cliente cliente)
+        public async Task<IActionResult> Create(/*[Bind("Id,Nome,CPF,RG, Email, Telefone")] */Cliente cliente)
         {
-            if (cliente.Email != null)
-                cliente.Email.ToList().ForEach(c => { c.Cliente.RG = cliente.RG; c.Cliente.Nome = cliente.Nome; c.Cliente.CPF = cliente.CPF; });
-
-            if (cliente.Telefone != null)
-                cliente.Telefone.ToList().ForEach(c => { c.Cliente.RG = cliente.RG; c.Cliente.Nome = cliente.Nome; c.Cliente.CPF = cliente.CPF; });
-
-            ModelState.Clear();
-            TryValidateModel(cliente);
-
             if (ModelState.IsValid)
             {
                 _context.Add(cliente);
@@ -102,21 +93,12 @@ namespace AML.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,CPF,RG, Endereco, Complemento, Bairro, CEP, Cidade, Email, Telefone")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,CPF,RG, Email, Telefone")] Cliente cliente)
         {
             if (id != cliente.Id)
             {
                 return NotFound();
             }
-
-            if (cliente.Email != null)
-                cliente.Email.ToList().ForEach(c => { c.Cliente.RG = cliente.RG; c.Cliente.Nome = cliente.Nome; c.Cliente.CPF = cliente.CPF; });
-
-            if (cliente.Telefone != null)
-                cliente.Telefone.ToList().ForEach(c => { c.Cliente.RG = cliente.RG; c.Cliente.Nome = cliente.Nome; c.Cliente.CPF = cliente.CPF; });
-
-            ModelState.Clear();
-            TryValidateModel(cliente);
 
             if (ModelState.IsValid)
             {
@@ -144,14 +126,6 @@ namespace AML.Controllers
                             }
                         }
                     }
-                    else
-                    {
-                        if (cliente.Email == null)
-                        {
-                            if (clienteBd.Email != null )
-                                clienteBd.Email.Clear();
-                        }
-                    }
 
                     if (cliente.Telefone != null && cliente.Telefone.Count > 0)
                     {
@@ -169,14 +143,6 @@ namespace AML.Controllers
                                 telefone.Numero = clienteCadastro.Numero;
                                 telefone.Tipo = clienteCadastro.Tipo;
                             }
-                        }
-                    }
-                    else
-                    {
-                        if (cliente.Telefone == null)
-                        {
-                            if (clienteBd.Telefone != null)
-                                clienteBd.Telefone.Clear();
                         }
                     }
 
