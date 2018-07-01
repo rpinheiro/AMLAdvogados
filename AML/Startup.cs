@@ -43,6 +43,9 @@ namespace AML
 
             services.AddDbContext<ClienteContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ClienteContext")));
+
+            services.AddDbContext<ClienteContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ClienteContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
